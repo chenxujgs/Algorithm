@@ -7,7 +7,7 @@ package suanfa.likou.A20220708;
  */
 public class likou64 {
     public static void main(String[] args) {
-        System.out.println(new likou64().minPathSum(new int[][]{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}}));
+        System.out.println(new likou64().minPathSum1(new int[][]{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}}));
     }
 
     // 动规解决
@@ -21,7 +21,7 @@ public class likou64 {
                 } else if (j == 0) {
                     grid[i][j] += grid[i - 1][j];
                 } else {
-                    grid[i][j] = Math.min(grid[i - 1][j], grid[i][j - 1]) + 1;
+                    grid[i][j] += Math.min(grid[i - 1][j], grid[i][j - 1]);
                 }
             }
         }
